@@ -6,6 +6,14 @@ TagManager:
   tags:
   - GreenPlayer
   - GreenFirePoint
+  - BluePlayer
+  - BlueFirePoint
+  - RedPlayer
+  - RedFirePoint
+  - SandPlayer
+  - SandFirePoint
+  - BlackPlayer
+  - BlackFirePoint
   layers:
   - Default
   - TransparentFX
