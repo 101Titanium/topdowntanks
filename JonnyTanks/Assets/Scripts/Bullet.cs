@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Bullet : MonoBehaviour
 {
     public Rigidbody2D rb;
@@ -42,7 +41,6 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         rb.AddForce(turret.directionForBullet * forceAdded, ForceMode2D.Force);
 
     }
@@ -50,5 +48,13 @@ public class Bullet : MonoBehaviour
     void BulletDeath()
     {
         Destroy(this.gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Nature" || collision.gameObject.tag == "Obstacles")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
