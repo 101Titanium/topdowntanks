@@ -14,8 +14,6 @@ TagManager:
   - SandFirePoint
   - BlackPlayer
   - BlackFirePoint
-  - Nature
-  - Obstacles
   layers:
   - Default
   - TransparentFX

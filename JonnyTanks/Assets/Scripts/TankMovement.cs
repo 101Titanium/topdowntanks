@@ -12,14 +12,14 @@ public class TankMovement : MonoBehaviour
     // Start is called before the first frame update
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         // Use GetAxis to smoothly control movement
         float verticalInput = Input.GetAxis("Vertical");
 
         float moveSpeed = verticalInput > 0 ? forwardSpeed : backwardSpeed;
 
-        tankRigidbody.AddForce(transform.up * verticalInput * -moveSpeed * Time.deltaTime);
+        tankRigidbody.AddForce(transform.up * verticalInput * -moveSpeed);
 
         // Use GetAxis to smoothly control rotation
         float horizontalInput = Input.GetAxis("Horizontal");
