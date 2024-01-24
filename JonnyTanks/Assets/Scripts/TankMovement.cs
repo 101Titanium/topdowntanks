@@ -19,7 +19,7 @@ public class TankMovement : MonoBehaviour
 
         float moveSpeed = verticalInput > 0 ? forwardSpeed : backwardSpeed;
 
-        tankRigidbody.AddForce(transform.up * verticalInput * -moveSpeed);
+        tankRigidbody.AddForce(transform.up * verticalInput * -moveSpeed * Time.deltaTime);
 
         // Use GetAxis to smoothly control rotation
         float horizontalInput = Input.GetAxis("Horizontal");

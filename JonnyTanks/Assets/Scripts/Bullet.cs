@@ -11,7 +11,9 @@ public class Bullet : MonoBehaviour
 
     public string[] colorFirePointTags = { "GreenFirePoint", "BlueFirePoint", "RedFirePoint", "SandFirePoint", "BlackFirePoint" };
 
-    private GameObject greenPlayer;
+    [SerializeField] private GameObject greenPlayer;
+    [SerializeField] private Rigidbody2D greenRb;
+
     [SerializeField] private Turret turret;
 
     [SerializeField] private FirePointColor pickFirePoint;
@@ -26,6 +28,8 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
+        greenPlayer = GameObject.FindGameObjectWithTag("GreenPlayer");
+        greenRb = greenPlayer.GetComponent<Rigidbody2D>();
 
         string selectedTag = colorFirePointTags[(int)pickFirePoint];
 
@@ -37,13 +41,15 @@ public class Bullet : MonoBehaviour
 
         turret = firePoint.GetComponent<Turret>();
 
+       
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        rb.AddForce(turret.directionForBullet * forceAdded, ForceMode2D.Force);
+        rb.AddForce(turret.directionForBullet * forceAdded * Time.deltaTime, ForceMode2D.Force);
+
 
     }
 

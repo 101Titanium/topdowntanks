@@ -7,7 +7,7 @@ public class FloatingHealthBar : MonoBehaviour
 {
 
     [SerializeField] private Slider slider;
-    [SerializeField] private Camera camera;
+    [SerializeField] private Camera cameraa;
     [SerializeField] private Transform target;
     [SerializeField] private GameObject Player;
     private Vector3 offset;
@@ -25,6 +25,10 @@ public class FloatingHealthBar : MonoBehaviour
         BlackPlayer,
     }
 
+    private void Awake()
+    {
+        cameraa = Camera.FindObjectOfType<Camera>();
+    }
     void Start()
     {
         offset = new Vector3(0, offsetNumber, 0);
@@ -32,6 +36,8 @@ public class FloatingHealthBar : MonoBehaviour
         string selectedTag = colorFirePointTags[(int)pickedColor];
 
         Player = GameObject.FindGameObjectWithTag(selectedTag);
+
+
     }
 
     public void UpdateHealthBar(float currentValue, float maxValue)
@@ -44,7 +50,7 @@ public class FloatingHealthBar : MonoBehaviour
     {
         target.position = Player.transform.position;
 
-        transform.rotation = camera.transform.rotation;
+        transform.rotation = cameraa.transform.rotation;
         transform.position = target.position + offset;
     }
 }
