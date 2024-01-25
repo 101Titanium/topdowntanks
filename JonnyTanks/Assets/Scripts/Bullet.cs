@@ -60,10 +60,10 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Obstacles" || collision.gameObject.tag == "Nature")
+        if (collision.gameObject.tag == "Obstacles" || collision.gameObject.tag == "Nature" || collision.gameObject.tag == "BlackPlayer")
         {
             BulletDeath();
-            Debug.Log("bullet broke");
+
         }
     }
 }

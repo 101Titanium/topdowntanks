@@ -7,6 +7,7 @@ public class TankHealth : MonoBehaviour
 
     public float health, maxHealth = 3f;
     public FloatingHealthBar healthBar;
+    public GameObject explosionPrefab;
 
     private void Start()
     {
@@ -25,6 +26,7 @@ public class TankHealth : MonoBehaviour
 
         if (health <= 0)
         {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Die();
         }
     }
@@ -33,4 +35,5 @@ public class TankHealth : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
+
 }

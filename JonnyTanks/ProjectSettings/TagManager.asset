@@ -17,6 +17,9 @@ TagManager:
   - FireDetector
   - Obstacles
   - Nature
+  - Bullet
+  - DamageTaker
+  - BulletEnemy
   layers:
   - Default
   - TransparentFX

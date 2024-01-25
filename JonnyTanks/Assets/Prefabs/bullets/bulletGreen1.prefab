@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -1586556046776499545}
   m_Layer: 0
   m_Name: bulletGreen1
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -230,6 +230,8 @@ MonoBehaviour:
   - RedFirePoint
   - SandFirePoint
   - BlackFirePoint
+  greenPlayer: {fileID: 0}
+  greenRb: {fileID: 0}
   turret: {fileID: 0}
   pickFirePoint: 0
 --- !u!61 &-1586556046776499545

@@ -613,6 +613,7 @@ Transform:
   - {fileID: 1850510398}
   - {fileID: 1305457362}
   - {fileID: 1374822338}
+  - {fileID: 737815695}
   m_Father: {fileID: 752768441}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -667,7 +668,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0019120574, y: -0.0057361126}
-  m_Size: {x: 0.5879526, y: 0.6520133}
+  m_Size: {x: 0.6, y: 0.65}
   m_Direction: 0
 --- !u!114 &246119223
 MonoBehaviour:
@@ -684,6 +685,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 3
   healthBar: {fileID: 1740030625}
+  explosionPrefab: {fileID: 7962623679871225555, guid: 1af1408badc438e4c9fc5754186cf7ae, type: 3}
 --- !u!1 &282850319
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,6 +791,69 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &463986993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 463986994}
+  - component: {fileID: 463986996}
+  - component: {fileID: 463986997}
+  m_Layer: 0
+  m_Name: DamageTaker
+  m_TagString: DamageTaker
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &463986994
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463986993}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 488332495}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &463986996
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463986993}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.6, y: 0.65}
+  m_Direction: 0
+--- !u!114 &463986997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463986993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6557011df17d86d4abf60f393f55f99d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tankHealth: {fileID: 488332496}
+  damageTaken: 1
 --- !u!1 &481009056
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +1005,7 @@ Transform:
   - {fileID: 1377167151}
   - {fileID: 1126329939}
   - {fileID: 211191876}
+  - {fileID: 463986994}
   m_Father: {fileID: 1485765396}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -958,6 +1024,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 3
   healthBar: {fileID: 481009058}
+  explosionPrefab: {fileID: 7962623679871225555, guid: 1af1408badc438e4c9fc5754186cf7ae, type: 3}
 --- !u!70 &488332497
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -972,7 +1039,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0019120574, y: -0.0057361126}
-  m_Size: {x: 0.5879526, y: 0.6520133}
+  m_Size: {x: 0.6, y: 0.65}
   m_Direction: 0
 --- !u!50 &488332498
 Rigidbody2D:
@@ -1458,6 +1525,69 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &737815694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 737815695}
+  - component: {fileID: 737815697}
+  - component: {fileID: 737815696}
+  m_Layer: 0
+  m_Name: DamageTaker
+  m_TagString: DamageTaker
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &737815695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737815694}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 246119219}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &737815696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737815694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e03c1649ab0e342885759bef65c616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tankHealth: {fileID: 246119223}
+  damageTaken: 1
+--- !u!70 &737815697
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737815694}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.6, y: 0.65}
+  m_Direction: 0
 --- !u!1 &752768440
 GameObject:
   m_ObjectHideFlags: 0
