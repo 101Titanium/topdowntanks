@@ -8,6 +8,7 @@ public class ActivateFiring : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject firePoint;
     public Vector3 directionForBullet;
+
     [SerializeField] private Animator muzzle;
 
     public EnemyTankMovement enemyTankMovement;
@@ -16,7 +17,8 @@ public class ActivateFiring : MonoBehaviour
 
     [SerializeField] private GameObject enemy;
 
-    [SerializeField] private RigidbodyConstraints2D enemyConstraints;
+    [SerializeField] private Rigidbody2D rbEnemy;
+
 
     private int maxIterations = 0;
 
@@ -31,7 +33,7 @@ public class ActivateFiring : MonoBehaviour
     {
         player = GameObject.Find("GreenTank");
         muzzle = GetComponentInChildren<Animator>();
-        enemyConstraints = GetComponent<RigidbodyConstraints2D>();
+        rbEnemy = enemy.GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -48,7 +50,7 @@ public class ActivateFiring : MonoBehaviour
             shootingAllowed = true;
             enemyTankMovement.canMove = false;
 
-            enemyConstraints = RigidbodyConstraints2D.FreezeRotation;
+            rbEnemy.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -58,7 +60,7 @@ public class ActivateFiring : MonoBehaviour
             shootingAllowed = true;
             enemyTankMovement.canMove = false;
 
-            enemyConstraints = RigidbodyConstraints2D.FreezeRotation;
+            rbEnemy.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -68,7 +70,7 @@ public class ActivateFiring : MonoBehaviour
             shootingAllowed = false;
             enemyTankMovement.canMove = true;
 
-            enemyConstraints = RigidbodyConstraints2D.None;
+            rbEnemy.constraints = RigidbodyConstraints2D.None;
         }
     }
 

@@ -629,7 +629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tankRigidbody: {fileID: 246119221}
-  rotateSpeed: 100
+  rotateSpeed: 115
   forwardSpeed: -100
   backwardSpeed: -60
 --- !u!50 &246119221
@@ -7264,7 +7264,7 @@ MonoBehaviour:
   enemyTankMovement: {fileID: 488332499}
   player: {fileID: 0}
   enemy: {fileID: 488332494}
-  enemyConstraints: 0
+  rbEnemy: {fileID: 0}
   shootingAllowed: 0
 --- !u!61 &2067664833
 BoxCollider2D:
@@ -7290,5 +7290,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.5, y: 4.5}
+  m_Size: {x: 6, y: 6}
   m_EdgeRadius: 0
