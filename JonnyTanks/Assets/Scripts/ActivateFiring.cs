@@ -84,7 +84,7 @@ public class ActivateFiring : MonoBehaviour
 
             Instantiate(bulletPrefab, firePoint.transform.position, rotation);
             cooldown = true;
-            Invoke("DisableCooldown", 0.8f);
+            Invoke("DisableCooldown", 1f);
 
             muzzle.SetTrigger("Shoot");
 
